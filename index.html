@@ -17,11 +17,75 @@
 
     <h1>Application js</h1>
     <div id="app">
-        <label name="label-nom">Nom</label>
+        <!-- les inputs de données -->
+        <label name="label-nom">Nom:</label>
         <input name="label-nom" v-model="nom" type="text">
-        <!-- <button v-on:click="saveTest">Enregistrer</button> -->
 
-        <personal-cmp :nom="nom"> </personal-cmp>
+        <label name="label-prenom">Prenom:</label>
+        <input name="label-prenom" v-model="prenom" type="text">
+
+        <label name="label-adress">Adresse:</label>
+        <input name="label-adress" v-model="adress" type="text">
+        <br>
+        <label name="label-age">Date de naissance:</label>
+        <input name="label-birthday" v-model="birthday" type="date">
+
+        <label name="label-drive">Avez vous le permis?</label>
+
+        <input name="label-drive" v-model="drive" type="radio" v-bind:value="true">
+        <label for="label-drive">Oui</label>
+
+        <input name="label-drive" v-model="drive" type="radio" v-bind:value="false">
+        <label for="label-drive">Non</label>
+        <br> <br>
+        <!--  les inputs de formations -->
+
+        <label name="label-formation">Ajouter une formation</label>
+        <input id="schoolLib" type="text">
+
+        <label name="label-startdateschool">Date de début</label>
+        <input id="schoolStart" type="date">
+
+        <label name="label-enddateschool">Date de fin</label>
+        <input id="schoolEnd" type="date">
+
+        <button v-on:click="addSchool">Envoyer</button>
+
+        <!--  les inputs de experiences pros -->
+
+        <br> <br>
+        <label name="label-job">Ajouter une expérience</label>
+        <input id="jobLib" type="text">
+
+        <label name="label-startdatejob">Date de début</label>
+        <input id="jobStart" type="date">
+
+        <label name="label-enddatejob">Date de fin</label>
+        <input id="jobEnd" type="date">
+
+        <button v-on:click="addJob">Envoyer</button>
+
+        <!--  les inputs des competences -->
+
+        <br> <br>
+        <label name="label-skill">Ajouter une expérience</label>
+        <input id="skillLib" type="text">
+
+        <button v-on:click="addSkill">Envoyer</button>
+
+        <!-- composants -->
+
+        <personal-cmp :nom="nom" :prenom="prenom" :adress="adress" :birthday="birthday" :drive="drive"> </personal-cmp>
+
+        <formation-cmp :schools="schools"></formation-cmp>
+
+        <exp-cmp :jobs="jobs"></exp-cmp>
+
+        <skill-cmp :skills="skills"></skill-cmp>
+
+        <button v-on:click="saveCv">Save</button>
+
+
 
     </div>
 

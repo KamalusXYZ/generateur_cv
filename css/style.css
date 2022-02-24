@@ -24,7 +24,7 @@ nav,
 ul {
     margin: 0;
     padding: 0;
-    list-style: none;
+
 }
 
 a {
@@ -35,11 +35,64 @@ a {
 
 h1 {
     margin: 25px;
+    text-align: center;
 
 }
 
 #app {
 
+    width: 1000px;
+    margin: 0 auto;
 
-    margin: 25px;
+    border: 3px solid rgb(81, 107, 116);
+    padding: 25px;
+
+
+}
+
+.box {
+
+    width: 900px;
+    margin: 0 auto;
+    background-color: rgb(223, 244, 251);
+    border-top: 3px solid rgb(81, 107, 116);
+    border-left: 3px solid rgb(81, 107, 116);
+    border-right: 3px solid rgb(81, 107, 116);
+    border-radius: 12px 12px 0 0;
+    padding: 25px;
+}
+
+.box2 {
+
+    width: 900px;
+    margin: 0 auto;
+    background-color: rgb(223, 244, 251);
+    border-left: 3px solid rgb(81, 107, 116);
+    border-right: 3px solid rgb(81, 107, 116);
+
+    padding: 25px;
+}
+
+.box3 {
+
+    width: 900px;
+    margin: 0 auto;
+    background-color: rgb(223, 244, 251);
+    border-bottom: 3px solid rgb(81, 107, 116);
+    border-left: 3px solid rgb(81, 107, 116);
+    border-right: 3px solid rgb(81, 107, 116);
+    border-radius: 0 0 12px 12px;
+    padding: 25px;
+}
+
+.name {
+
+    text-transform: capitalize;
+
+}
+
+.green {
+
+    color: green;
+    font-weight: bold;
 }
