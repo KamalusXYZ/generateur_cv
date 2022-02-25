@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Générateur de CV</title>
+    <script src="/js/app.js" defer></script>
 </head>
 
 <body>
 
-
-
-    <h1>Application js</h1>
+    <h1>Application js: Générateur de CV</h1>
     <div id="app">
         <!-- les inputs de données -->
         <label name="label-nom">Nom:</label>
@@ -68,7 +67,7 @@
         <!--  les inputs des competences -->
 
         <br> <br>
-        <label name="label-skill">Ajouter une expérience</label>
+        <label name="label-skill">Ajouter une compétence</label>
         <input id="skillLib" type="text">
 
         <button v-on:click="addSkill">Envoyer</button>
@@ -83,13 +82,11 @@
 
         <skill-cmp :skills="skills"></skill-cmp>
 
-        <button v-on:click="saveCv">Save</button>
-
-
+        <button @click="saveCv">Save</button>
 
     </div>
 
 </body>
-<script src="/js/app.js"></script>
+
 
 </html>

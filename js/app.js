@@ -1,71 +1,34 @@
 let skill = {
   template: `
-  <div class=box3 >
-  <h2>Mes Compétences</h2>
-  
+  <div class="box3">
+  <h2>Mes Compétences</h2>  
   <ul>
     <li v-for="skill of skills"> {{skill.name}}</li>
-  </ul>
-  
+  </ul>  
   </div>
-
   `,
-  props: ["skills"],
-  data: function () {
-    return {
-
-
-    }
-  },
-  methods: {
-
-
-
-
-  }
-
-
-
-
+  props: ["skills"]
 }
 
 
 
 let exp = {
   template: `
-  <div class=box2 >
+  <div class="box2" >
   <h2>Mes Expériences</h2>
-  
   <ul>
     <li v-for="job of jobs"> {{job.name}} {{job.start}} {{job.end}}</li>
   </ul>
-  
-  </div>
+    </div>
 
   `,
-  props: ["jobs"],
-  data: function () {
-    return {
-
-
-    }
-  },
-  methods: {
-
-
-
-
-  }
-
-
-
-
+  props: ["jobs"]
 }
 
 
 let formation = {
   template: `
-  <div class=box2 >
+  <div class="box2">
   <h2>Mes formations</h2>
   
   <ul>
@@ -75,59 +38,29 @@ let formation = {
   </div>
 
   `,
-  props: ["schools"],
-  data: function () {
-    return {
-
-
-    }
-  },
-  methods: {
-
-
-
-
-  }
-
-
-
+  props: ["schools"]
 
 }
 
 
 let personal = {
   template: `
-  <div class="box">
-  
-  <h1>Curriculum Vitae</h1>
-  <h2>Données personnels</h2>
-  <p class="name">{{nom}} {{prenom}}</p> 
-  <p>{{adress}}</p> 
-  <p v-if="birthday !== null">{{age}} ans</p>
-  <p v-if="drive  == true" class="green"> Titulaire du permis B </p>
+  <div class="box">  
+    <h1>Curriculum Vitae</h1>
+    <h2>Données personnels</h2>
+    <p class="name">{{nom}} {{prenom}}</p> 
+    <p>{{adress}}</p> 
+    <p v-if="birthday !== null">{{age}} ans</p>
+    <p v-if="drive == true" class="green"> Titulaire du permis B </p>
   </div>
   `,
   props: ["nom", "prenom", "adress", "birthday", "drive"],
-  data: function () {
-    return {
-
-    }
-
-  },
-  methods: {
-
-  },
   computed: {
-
     age: function () {
-
       now = Date.now()
-      temp = now - Date.parse(this.birthday)
-      total = temp / 31536000000
+      total = (now - Date.parse(this.birthday)) / 31536000000
       return Math.floor(total);
     }
-
-
   }
 };
 
@@ -146,8 +79,6 @@ let vm = new Vue({
     jobs: [],
     skills: []
 
-
-
   },
 
   components: {
@@ -161,16 +92,11 @@ let vm = new Vue({
   methods: {
 
     saveCv: function () {
-
-      //
-
-
       localStorage.setItem("cv", JSON.stringify(this.$data))
 
     },
 
     addSchool: function () {
-
 
       let label = document.getElementById("schoolLib").value
       let start = document.getElementById("schoolStart").value
@@ -191,11 +117,9 @@ let vm = new Vue({
     },
     addJob: function () {
 
-
       let label = document.getElementById("jobLib").value
       let start = document.getElementById("jobStart").value
       let end = document.getElementById("jobEnd").value
-
 
       let job = {
         name: label,
@@ -212,7 +136,6 @@ let vm = new Vue({
     },
     addSkill: function () {
 
-
       let label = document.getElementById("skillLib").value
 
       let skill = {
@@ -222,17 +145,6 @@ let vm = new Vue({
       this.skills.push(skill)
       document.getElementById("skillLib").value = ''
 
-
     }
-
-
-
-
-
-
-  },
-
-
-
-
+  }
 });
